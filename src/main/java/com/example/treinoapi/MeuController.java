@@ -1,5 +1,6 @@
 package com.example.treinoapi;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,5 +32,13 @@ public String TerceiroExemplo (@RequestHeader("user-agent") String UserAgent, @R
     public String criar(@RequestBody String nome) {
         System.out.println("Recebi: " + nome);
         return "criado: " + nome;
+    }
+    @GetMapping("teste-response")
+    public ResponseEntity<String> testeResponse(@RequestParam long id) {
+        if (id == 1) {
+            return ResponseEntity.ok("Produto encontrado!");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
