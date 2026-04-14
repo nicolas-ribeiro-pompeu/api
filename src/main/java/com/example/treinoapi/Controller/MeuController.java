@@ -1,4 +1,4 @@
-package com.example.treinoapi;
+package com.example.treinoapi.Controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

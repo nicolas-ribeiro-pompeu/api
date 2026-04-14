@@ -1,4 +1,4 @@
-package com.example.treinoapi;
+package com.example.treinoapi.Usuario;
 import jakarta.persistence.*;
 @Entity
 
@@ -25,6 +25,11 @@ public class Usuario {
 
     public Integer getId() { return id;}
 
-
+    public void setNome (String nome){
+        this.nome = nome;
+    }
+    public void setEmail (String email){
+        this.email = email;
+    }
 
 }
