@@ -13,11 +13,15 @@ public class Usuario {
     @Column (name = "email")
     private String email;
 
+    @Column (name = "telefone")
+    private String telefone;
+
     public Usuario (){}
 
-    public Usuario(String nome, String email, Integer id){
+    public Usuario(String nome, String email, Integer id, String telefone){
         this.nome = nome;
         this.email = email;
+        this.telefone = telefone;
     }
     public String getNome() { return nome; }
 
@@ -25,11 +29,16 @@ public class Usuario {
 
     public Integer getId() { return id;}
 
+    public String getTelefone() {return telefone;}
+
     public void setNome (String nome){
         this.nome = nome;
     }
     public void setEmail (String email){
         this.email = email;
+    }
+    public void setTelefone (String telefone){
+        this.telefone = telefone;
     }
 
 }

@@ -21,9 +21,12 @@ public class UsuarioService {
         return repository.findByEmail(email).orElseThrow(
                 () -> new RuntimeException("Email nao encontrado"));
     }
-    public void deletarUsuarioPorEmail (String email){
-         repository.deleteByEmail(email);
+    public void deletarUsuarioPorId (Integer id){
+         repository.deleteById(id);
     }
+
+    public void deletarUsuarioPorEmail (String email) {repository.deleteByEmail(email);}
+
     public void atualizarUsuarioPorId(Integer id, Usuario usuario) {
         Usuario usuarioEntity = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuario nao encontrado"));
@@ -33,6 +36,9 @@ public class UsuarioService {
         }
         if (usuario.getEmail() != null) {
             usuarioEntity.setEmail(usuario.getEmail());
+        }
+        if (usuario.getTelefone() != null) {
+            usuarioEntity.setTelefone (usuario.getTelefone());
         }
 
         repository.saveAndFlush(usuarioEntity);
